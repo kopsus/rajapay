@@ -2,12 +2,11 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import Link from "next/link";
 import { ChevronLeft, Save, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import BlogEditor from "@/components/admin/blog/blog-editor";
-// import { saveBlog } from "@/lib/action/blog";
 import { IBlog } from "@/types/blog";
+import { saveBlog } from "@/lib/action/blog";
 
 export default function EditBlogClient({
   initialBlog,
@@ -26,25 +25,24 @@ export default function EditBlogClient({
       return alert("Semua field wajib diisi!");
     }
 
-    // setIsSubmitting(true);
-    // try {
-    //   const res = await saveBlog({
-    //     id: initialBlog.id,
-    //     title,
-    //     content,
-    //     categoryId,
-    //   });
+    setIsSubmitting(true);
+    try {
+      const res = await saveBlog({
+        id: initialBlog.id,
+        title,
+        content,
+      });
 
-    //   if (res.success) {
-    //     alert("Artikel berhasil diperbarui!");
-    //     router.push(`/admin/blog/${initialBlog.id}`); // Lari ke halaman detail
-    //     router.refresh();
-    //   }
-    // } catch {
-    //   alert("Gagal memperbarui artikel");
-    // } finally {
-    //   setIsSubmitting(false);
-    // }
+      if (res.success) {
+        alert("Artikel berhasil diperbarui!");
+        router.push(`/admin/blog/${initialBlog.id}`);
+        router.refresh();
+      }
+    } catch {
+      alert("Gagal memperbarui artikel");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (

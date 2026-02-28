@@ -1,19 +1,11 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import BlogEditor from "@/components/admin/blog/blog-editor";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, Loader2, Save } from "lucide-react";
-import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
-// import {
-//   Select,
-//   SelectContent,
-//   SelectItem,
-//   SelectTrigger,
-//   SelectValue,
-// } from "@/components/ui/select";
-// import { saveBlog } from "@/lib/action/blog";
+import { saveBlog } from "@/lib/action/blog";
 
 export default function NewPostPage() {
   const router = useRouter();
@@ -28,37 +20,34 @@ export default function NewPostPage() {
       return alert("Judul, Kategori, dan Konten wajib diisi!");
     }
 
-    // setIsSubmitting(true);
-    // try {
-    //   const res = await saveBlog({
-    //     id: params?.id as string,
-    //     title,
-    //     content,
-    //     categoryId,
-    //   });
+    setIsSubmitting(true);
+    try {
+      const res = await saveBlog({
+        id: params?.id as string,
+        title,
+        content,
+      });
 
-    //   if (res.success) {
-    //     alert("Postingan berhasil disimpan!");
-    //     router.push("/admin/blog");
-    //     router.refresh();
-    //   }
-    // } catch {
-    //   alert("Terjadi kesalahan saat menyimpan");
-    // } finally {
-    //   setIsSubmitting(false);
-    // }
+      if (res.success) {
+        alert("Postingan berhasil disimpan!");
+        router.push("/admin/blog");
+        router.refresh();
+      }
+    } catch {
+      alert("Terjadi kesalahan saat menyimpan");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
-    <div className="min-h-screen bg-muted/30">
+    <div className="min-h-screen">
       <div className="mx-auto space-y-6">
         {/* Header Navigasi */}
         <div className="flex items-center justify-between">
-          <Link href="/blog">
-            <Button variant="ghost" size="sm">
-              <ChevronLeft className="mr-2 h-4 w-4" /> Kembali
-            </Button>
-          </Link>
+          <Button variant="ghost" size="sm" onClick={() => router.back()}>
+            <ChevronLeft className="mr-2 h-4 w-4" /> Kembali
+          </Button>
           <Button
             onClick={handleSave}
             disabled={isSubmitting}

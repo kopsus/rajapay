@@ -2,9 +2,11 @@ import Link from "next/link";
 import { Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import BlogTableWrapper from "@/components/admin/blog/table/table-wrapper";
-import { blogs } from "@/data/blog";
+import { getBlogs } from "@/lib/action/blog";
 
-export default function page() {
+export default async function page() {
+  const blogs = await getBlogs();
+
   return (
     <div className="flex flex-1 flex-col gap-6">
       <div className="flex items-center justify-between">

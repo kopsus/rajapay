@@ -33,7 +33,7 @@ import {
 
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-// import { uploadImage } from "@/lib/action/upload-media";
+import { uploadImage } from "@/lib/action/upload-media";
 
 const headings = [
   { level: 1, icon: <Heading1 className="h-4 w-4" /> },
@@ -106,12 +106,12 @@ export default function BlogEditor({
         const formData = new FormData();
         formData.append("avatar", file);
 
-        // const res = await uploadImage(formData);
-        // if (res.success && res.url) {
-        //   editor.chain().focus().setImage({ src: res.url }).run();
-        // } else {
-        //   alert(res.error || "Gagal upload gambar");
-        // }
+        const res = await uploadImage(formData);
+        if (res.success && res.url) {
+          editor.chain().focus().setImage({ src: res.url }).run();
+        } else {
+          alert(res.error || "Gagal upload gambar");
+        }
       }
     };
     input.click();
@@ -215,7 +215,7 @@ export default function BlogEditor({
       <div className="flex-1 bg-white dark:bg-zinc-950 p-10 md:p-20 cursor-text min-h-125">
         <EditorContent
           editor={editor}
-          className="prose prose-stone dark:prose-invert lg:prose-2xl max-w-4xl mx-auto focus:outline-none"
+          className="prose prose-stone dark:prose-invert lg:prose-2xl mx-auto focus:outline-none"
         />
       </div>
     </div>

@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import { DataTableBlog } from "@/components/admin/blog/table/data-table";
 import { columnsBlog } from "@/components/admin/blog/table/columns";
 import { IBlog } from "@/types/blog";
+import { deleteBlog } from "@/lib/action/blog";
 
 export default function BlogTableWrapper({
   initialData,
@@ -22,10 +23,10 @@ export default function BlogTableWrapper({
 
   const handleDelete = async (id: string) => {
     if (confirm("Yakin ingin menghapus artikel ini?")) {
-      // const res = await deleteBlog(id);
-      // if (res.success) {
-      //   router.refresh();
-      // }
+      const res = await deleteBlog(id);
+      if (res.success) {
+        router.refresh();
+      }
     }
   };
 

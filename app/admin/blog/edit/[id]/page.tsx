@@ -1,24 +1,20 @@
 import EditBlogClient from "@/components/admin/blog/editBlog";
-import { blogs } from "@/data/blog";
-// import { getBlogById } from "@/lib/action/blog";
+import { getBlogById } from "@/lib/action/blog";
 import { notFound } from "next/navigation";
 
 export default async function EditPostPage(props: {
   params: Promise<{ id: string }>;
 }) {
-  // const { id } = await props.params;
+  const { id } = await props.params;
+  const [blog] = await Promise.all([getBlogById(id)]);
 
-  // const [blog, categories] = await Promise.all([
-  //   getBlogById(id),
-  // ]);
-
-  // if (!blog) {
-  //   notFound();
-  // }
+  if (!blog) {
+    notFound();
+  }
 
   return (
-    <div className="min-h-screen bg-muted/30">
-      <EditBlogClient initialBlog={blogs[0]} />
+    <div className="min-h-screen">
+      <EditBlogClient initialBlog={blog} />
     </div>
   );
 }
