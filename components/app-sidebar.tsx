@@ -11,7 +11,7 @@ import {
   SidebarMenuItem,
   SidebarRail,
 } from "@/components/ui/sidebar";
-import { FileText, LayoutDashboard, Package } from "lucide-react";
+import { FileText, LayoutDashboard, ListCheck, Package } from "lucide-react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
@@ -26,6 +26,11 @@ const navMain = [
     title: "Blog",
     url: "/admin/blog",
     icon: FileText,
+  },
+  {
+    title: "Category",
+    url: "/admin/category",
+    icon: ListCheck,
   },
   {
     title: "Package",
