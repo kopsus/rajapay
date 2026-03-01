@@ -33,8 +33,8 @@ const navMain = [
     icon: ListCheck,
   },
   {
-    title: "Package",
-    url: "/admin/package",
+    title: "Product",
+    url: "/admin/product",
     icon: Package,
   },
 ];
