@@ -11,17 +11,12 @@ import {
   SidebarMenuItem,
   SidebarRail,
 } from "@/components/ui/sidebar";
-import { FileText, LayoutDashboard, ListCheck, Package } from "lucide-react";
+import { FileText, ListCheck, Package } from "lucide-react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 
 const navMain = [
-  {
-    title: "Dashboard",
-    url: "/admin/dashboard",
-    icon: LayoutDashboard,
-  },
   {
     title: "Blog",
     url: "/admin/blog",
@@ -45,12 +40,12 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar {...props}>
       <Image
-        src={"/img/logo.png"}
+        src={"/img/logo.webp"}
         alt="logo"
         width={0}
         height={0}
         sizes="100vw"
-        className="w-10/12 mx-auto mt-6 mb-4"
+        className="w-2/5 mx-auto mt-6 mb-4"
       />
       <SidebarContent>
         <SidebarGroup>
