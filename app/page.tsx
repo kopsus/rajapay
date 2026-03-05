@@ -1,5 +1,6 @@
 import { Header } from "@/components/header";
 import { Article } from "@/components/user/home/article";
+import { Faq } from "@/components/user/home/faq";
 import { Fitur } from "@/components/user/home/fitur";
 import { Hero } from "@/components/user/home/hero";
 import { Highlight } from "@/components/user/home/highlight";
@@ -22,6 +23,7 @@ export default function Home() {
       <HowUse />
       <Join />
       <Article />
+      <Faq />
     </>
   );
 }
