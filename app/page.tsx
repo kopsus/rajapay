@@ -1,4 +1,5 @@
 import { Header } from "@/components/header";
+import { Article } from "@/components/user/home/article";
 import { Fitur } from "@/components/user/home/fitur";
 import { Hero } from "@/components/user/home/hero";
 import { Highlight } from "@/components/user/home/highlight";
@@ -20,6 +21,7 @@ export default function Home() {
       <Testimoni />
       <HowUse />
       <Join />
+      <Article />
     </>
   );
 }
