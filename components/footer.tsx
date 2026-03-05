@@ -67,7 +67,7 @@ export const Footer = () => {
       <div className="w-full max-w-7xl mx-auto grid grid-cols-5 gap-14">
         <div className="col-span-2">
           <div className="flex flex-col gap-6">
-            <div className="flex items-center">
+            <div className="flex items-center gap-2">
               <Image src={"/img/logo.webp"} alt="logo" width={40} height={40} />
               <p className="font-bold text-primary text-3xl">Rajapay</p>
             </div>

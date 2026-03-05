@@ -26,7 +26,7 @@ export const Header = () => {
     },
     {
       name: "Artikel",
-      href: "#",
+      href: "/artikel",
     },
   ];
 
