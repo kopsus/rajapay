@@ -13,7 +13,7 @@ export const Hero = () => {
         <div className="flex flex-col items-center gap-6 w-145 mx-auto">
           <div className="flex flex-col items-center text-center gap-4">
             <p className="text-5xl font-semibold text-primary leading-16">
-              Aplikasi isi Pulsa & <br /> PPOB
+              Aplikasi isi Pulsa & <br /> PPOB{" "}
               <span className="text-secondary">TERMUDAH</span>
             </p>
             <p className="text-[#4D5461]">

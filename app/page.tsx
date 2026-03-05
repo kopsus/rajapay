@@ -1,3 +1,4 @@
+import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { Article } from "@/components/user/home/article";
 import { Faq } from "@/components/user/home/faq";
@@ -24,6 +25,7 @@ export default function Home() {
       <Join />
       <Article />
       <Faq />
+      <Footer />
     </>
   );
 }

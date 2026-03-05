@@ -126,7 +126,7 @@
   }
 
   .container-section {
-    @apply py-25;
+    @apply py-25 px-14;
   }
 
   .ProseMirror:focus {

@@ -1,3 +1,5 @@
+"use client";
+
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import { Button } from "../ui/button";
@@ -8,7 +10,7 @@ interface IArticle1 {
     title: string;
     desc: string;
   };
-  key: number;
+  key?: number;
 }
 
 export const Article1 = ({ item, key }: IArticle1) => {
