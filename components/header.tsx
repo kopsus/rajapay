@@ -6,7 +6,7 @@ export const Header = () => {
   const NavLink = [
     {
       name: "Harga",
-      href: "#",
+      href: "/harga",
     },
     {
       name: "Tentang",
