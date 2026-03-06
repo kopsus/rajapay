@@ -14,10 +14,10 @@ export const Article2 = () => {
         />
       </div>
       <div className="space-y-1">
-        <p className="font-semibold text-lg text-primary">
+        <p className="font-semibold line-clamp-2 lg:text-lg text-primary">
           Tips Memilih Agen Paket Data All Operator untuk Usaha Rumahan
         </p>
-        <p className="line-clamp-1 text-[#4D5461] text-sm">
+        <p className="line-clamp-3 text-[#4D5461] text-sm">
           Jangan biarkan korosi dini menghancurkan aset gudang Anda. Pelajari
           perbedaan teknis ketebalan lapisan Aluminium-Zinc dan dampaknya
           terhadap Life-Cycle Cost bangunan di lingkungan dengan tingkat

@@ -37,7 +37,7 @@ export const AllArticle = () => {
     <div className="container-section rounded-t-4xl border-t">
       <div className="max-w-7xl mx-auto space-y-8">
         <p className="text-2xl font-semibold text-primary">Semua Artikel</p>
-        <div className="grid grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
           {articleList.map((item, index) => (
             <Article1 item={item} key={index} />
           ))}

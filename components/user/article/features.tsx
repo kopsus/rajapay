@@ -6,7 +6,7 @@ export const Features = () => {
     <div className="container-section rounded-t-4xl border-t">
       <div className="max-w-7xl mx-auto space-y-8">
         <p className="text-2xl font-semibold text-primary">Features</p>
-        <div className="grid grid-cols-2 gap-6 w-full">
+        <div className="grid lg:grid-cols-2 gap-6 w-full">
           <div className="flex flex-col gap-4">
             <Image
               src={"/img/article-1.jpg"}

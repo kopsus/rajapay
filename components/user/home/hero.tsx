@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export const Hero = () => {
   return (
-    <div className="relative py-10 lg:py-20 overflow-hidden">
+    <div className="py-10 lg:py-20">
       {/* Background Decorations */}
       <div className="absolute top-0 left-0 w-full h-9/12 bg-[url(/img/bg-star.png)] bg-cover bg-center bg-no-repeat opacity-40" />
       <div className="absolute bottom-0 left-0 w-full h-9/12 bg-[url(/img/bg-abstrack.png)] bg-cover bg-center bg-no-repeat opacity-60" />
