@@ -36,7 +36,7 @@ export const Faq = () => {
   return (
     <div className="container-section">
       <div className="max-w-7xl mx-auto flex flex-col gap-14">
-        <p className="text-primary text-5xl font-semibold leading-16 max-w-3xl mx-auto text-center">
+        <p className="text-primary text-3xl lg:text-5xl font-semibold leading-tight lg:leading-16 text-center">
           Pertanyaan yang Sering Ditanyakan
         </p>
         <Accordion

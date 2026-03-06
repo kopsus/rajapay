@@ -74,7 +74,7 @@ export default function CategoryClient({
       {/* Simple List Table */}
       <div className="border rounded-xl bg-card overflow-hidden">
         <table className="w-full text-sm text-left">
-          <thead className="bg-muted/50 text-muted-foreground font-medium border-b">
+          <thead className="bg-primary text-white font-medium border-b">
             <tr>
               <th className="p-4">Nama Kategori</th>
               <th className="p-4 text-right">Aksi</th>

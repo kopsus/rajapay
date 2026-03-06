@@ -12,6 +12,7 @@ import { IProductCategory } from "@/types/category";
 import { saveProduct, deleteProduct } from "@/lib/action/product";
 import { DialogPost } from "./DialogPost";
 import { ProductTable } from "./ProductTable";
+import { Card } from "@/components/ui/card";
 
 export default function ProductClientContent({
   initialProducts,
@@ -87,53 +88,55 @@ export default function ProductClientContent({
         </Button>
       </div>
 
-      <Tabs defaultValue={categories[0].id} className="w-full">
-        {/* TABS NAVIGATION DENGAN OVERFLOW FIX */}
-        <div className="flex items-center justify-between gap-4 mb-4">
-          <div
-            className="flex-1 overflow-x-auto scrollbar-hide"
-            style={{ scrollbarWidth: "none" }}
-          >
-            <TabsList className="inline-flex h-10 items-center justify-center rounded-lg overflow-hidden bg-slate-100 p-1 text-slate-500">
-              {categories.map((cat) => (
-                <TabsTrigger key={cat.id} value={cat.id}>
-                  {cat.name}
-                </TabsTrigger>
-              ))}
-            </TabsList>
+      <Card className="p-4">
+        <Tabs defaultValue={categories[0].id} className="w-full">
+          {/* TABS NAVIGATION DENGAN OVERFLOW FIX */}
+          <div className="flex items-center justify-between gap-4 mb-4">
+            <div
+              className="flex-1 overflow-x-auto scrollbar-hide"
+              style={{ scrollbarWidth: "none" }}
+            >
+              <TabsList className="inline-flex h-10 items-center justify-center rounded-lg overflow-hidden bg-slate-100 p-1 text-slate-500">
+                {categories.map((cat) => (
+                  <TabsTrigger key={cat.id} value={cat.id}>
+                    {cat.name}
+                  </TabsTrigger>
+                ))}
+              </TabsList>
+            </div>
+
+            <div className="relative w-full max-w-xs hidden md:block">
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
+              <Input
+                placeholder="Cari nama atau kode..."
+                className="pl-9 rounded-full bg-white"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
+            </div>
           </div>
 
-          <div className="relative w-full max-w-xs hidden md:block">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
-            <Input
-              placeholder="Cari nama atau kode..."
-              className="pl-9 rounded-full bg-white"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-            />
-          </div>
-        </div>
-
-        {/* CONTENT */}
-        {categories.map((cat) => (
-          <TabsContent key={cat.id} value={cat.id} className="mt-0">
-            <ProductTable
-              products={initialProducts.filter(
-                (p) =>
-                  p.category_id === cat.id &&
-                  (p.nama.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                    p.kode.toLowerCase().includes(searchQuery.toLowerCase())),
-              )}
-              onEdit={(p) => {
-                setEditingId(p.id);
-                setFormData(p);
-                setIsOpen(true);
-              }}
-              onDelete={handleDelete}
-            />
-          </TabsContent>
-        ))}
-      </Tabs>
+          {/* CONTENT */}
+          {categories.map((cat) => (
+            <TabsContent key={cat.id} value={cat.id} className="mt-0">
+              <ProductTable
+                products={initialProducts.filter(
+                  (p) =>
+                    p.category_id === cat.id &&
+                    (p.nama.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                      p.kode.toLowerCase().includes(searchQuery.toLowerCase())),
+                )}
+                onEdit={(p) => {
+                  setEditingId(p.id);
+                  setFormData(p);
+                  setIsOpen(true);
+                }}
+                onDelete={handleDelete}
+              />
+            </TabsContent>
+          ))}
+        </Tabs>
+      </Card>
 
       {/* MODAL FORM TAMBAH/EDIT */}
       <DialogPost

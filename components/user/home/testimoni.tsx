@@ -48,16 +48,17 @@ export const Testimoni = () => {
   return (
     <div className="container-section">
       <div className="max-w-7xl mx-auto flex flex-col gap-14">
-        <div className="relative flex flex-col items-center text-center gap-6 max-w-3xl mx-auto">
-          <p className="text-primary text-5xl font-semibold leading-16">
+        <div className="relative flex flex-col items-center text-center gap-4 lg:gap-6 max-w-3xl mx-auto">
+          <p className="text-primary text-3xl lg:text-5xl font-semibold leading-tight lg:leading-16">
             Ribuan Klien Puas
           </p>
-          <p className="text-[#4D5461]">
+          <p className="text-[#4D5461] text-sm lg:text-base">
             Rajapay telah memiliki ribuan ulasan positif dari user Rajapay
           </p>
-          <Quote className="fill-[#88A8CD] text-[#88A8CD] rotate-12 size-11 absolute top-1/2 -translate-y-1/2 -right-28" />
-          <Quote className="fill-[#FBC8A2] text-[#FBC8A2] rotate-12 size-11 absolute top-1/2 -translate-y-1/2 -left-28" />
+          <Quote className="fill-[#88A8CD] text-[#88A8CD] rotate-12 size-11 absolute top-1/2 -translate-y-1/2 right-0 lg:-right-28" />
+          <Quote className="fill-[#FBC8A2] text-[#FBC8A2] rotate-12 size-11 absolute top-1/2 -translate-y-1/2 left-0 lg:-left-28" />
         </div>
+
         <div className="w-full flex items-center gap-2">
           <Carousel
             opts={{

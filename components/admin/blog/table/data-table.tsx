@@ -63,7 +63,10 @@ export function DataTableBlog<TData, TValue>({
               <TableRow key={headerGroup.id}>
                 {headerGroup.headers.map((header) => {
                   return (
-                    <TableHead className="bg-slate-50" key={header.id}>
+                    <TableHead
+                      className="bg-primary text-white font-medium"
+                      key={header.id}
+                    >
                       {header.isPlaceholder
                         ? null
                         : flexRender(

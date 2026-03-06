@@ -31,13 +31,13 @@ export function ProductTable({
   return (
     <div className="border rounded-xl bg-white overflow-hidden shadow-sm">
       <Table>
-        <TableHeader className="bg-slate-50">
+        <TableHeader className="bg-primary font-medium">
           <TableRow>
-            <TableHead className="w-25">Kode</TableHead>
-            <TableHead>Nama Produk</TableHead>
-            <TableHead>Harga</TableHead>
-            <TableHead>Status</TableHead>
-            <TableHead className="text-right">Aksi</TableHead>
+            <TableHead className="w-25 text-white ">Kode</TableHead>
+            <TableHead className="text-white ">Nama Produk</TableHead>
+            <TableHead className="text-white ">Harga</TableHead>
+            <TableHead className="text-white ">Status</TableHead>
+            <TableHead className="text-white text-right">Aksi</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
