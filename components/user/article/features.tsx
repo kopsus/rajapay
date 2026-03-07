@@ -26,6 +26,7 @@ export const Features = async () => {
                   width={0}
                   height={0}
                   sizes="100vw"
+                  unoptimized
                   className="w-full h-auto object-cover block rounded-4xl"
                 />
               ) : (
