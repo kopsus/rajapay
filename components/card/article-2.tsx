@@ -20,6 +20,7 @@ export const Article2 = ({ data }: { data: IBlog }) => {
             width={0}
             height={0}
             sizes="100vw"
+            unoptimized
             className="w-full h-full block object-cover"
           />
         ) : (
