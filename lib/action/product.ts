@@ -5,10 +5,21 @@ import { IProduct } from "@/types/product";
 import { ResultSetHeader, RowDataPacket } from "mysql2";
 import { revalidatePath } from "next/cache";
 
-export async function getPackages(): Promise<IProduct[]> {
+export async function getPackages(categoryId?: number): Promise<IProduct[]> {
   try {
+    let query = "SELECT * FROM products";
+    const params: any[] = [];
+
+    if (categoryId) {
+      query += " WHERE category_id = ?";
+      params.push(categoryId);
+    }
+
+    query += " ORDER BY nama ASC";
+
     const [rows] = await pool.query<(IProduct & RowDataPacket)[]>(
-      "SELECT * FROM products ORDER BY nama ASC",
+      query,
+      params,
     );
     return rows;
   } catch (error) {
