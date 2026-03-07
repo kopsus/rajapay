@@ -32,7 +32,7 @@ export function ProductTable({
     <div className="border rounded-xl bg-white overflow-hidden shadow-sm">
       <Table>
         <TableHeader className="bg-primary font-medium">
-          <TableRow>
+          <TableRow className="hover:bg-primary/50">
             <TableHead className="w-25 text-white ">Kode</TableHead>
             <TableHead className="text-white ">Nama Produk</TableHead>
             <TableHead className="text-white ">Harga</TableHead>
@@ -76,19 +76,15 @@ export function ProductTable({
               </TableCell>
               <TableCell className="text-right">
                 <div className="flex justify-end gap-1">
-                  <Button
-                    size="icon"
-                    variant="ghost"
-                    onClick={() => onEdit(product)}
-                  >
-                    <Pencil size={14} className="text-slate-500" />
+                  <Button size="icon" onClick={() => onEdit(product)}>
+                    <Pencil size={14} />
                   </Button>
                   <Button
                     size="icon"
-                    variant="ghost"
+                    variant="destructive"
                     onClick={() => onDelete(product.id)}
                   >
-                    <Trash2 size={14} className="text-red-500" />
+                    <Trash2 size={14} />
                   </Button>
                 </div>
               </TableCell>

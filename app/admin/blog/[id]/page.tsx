@@ -1,8 +1,7 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ChevronLeft, Calendar, Tag } from "lucide-react";
+import { ChevronLeft, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { format } from "date-fns";
 import { id as localeID } from "date-fns/locale";
 import { getBlogById } from "@/lib/action/blog";
@@ -19,9 +18,9 @@ export default async function BlogDetailPage(props: {
   }
 
   return (
-    <div className="min-h-screen bg-white pb-20">
+    <div className="min-h-screen pb-20">
       <div className="sticky top-0 z-10 bg-white/80 backdrop-blur-md border-b">
-        <div className="mx-auto px-4 h-16 flex items-center justify-between">
+        <div className="mx-auto h-16 flex items-center justify-between">
           <Link href="/admin/blog">
             <Button variant="ghost" size="sm">
               <ChevronLeft className="mr-2 h-4 w-4" /> Kembali ke Dashboard
@@ -35,7 +34,7 @@ export default async function BlogDetailPage(props: {
         </div>
       </div>
 
-      <article className="mx-auto px-4 pt-12">
+      <article className="mx-auto pt-12">
         <div className="space-y-4 mb-8">
           <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-zinc-900 leading-tight">
             {blog.title}

@@ -1,29 +1,39 @@
+import { getExcerpt, getFirstImage } from "@/app/(user)/artikel/page";
+import { IBlog } from "@/types/blog";
 import Image from "next/image";
+import Link from "next/link";
 
-export const Article2 = () => {
+export const Article2 = ({ data }: { data: IBlog }) => {
+  if (!data) return null;
+  const image = getFirstImage(data.content);
+
   return (
-    <div className="flex items-center gap-4 min-h-34.5">
+    <Link
+      href={`/artikel/${data.id}`}
+      className="flex items-center gap-4 min-h-34.5"
+    >
       <div className="min-w-37 w-37 h-full rounded-2xl overflow-hidden">
-        <Image
-          src={"/img/article-1.jpg"}
-          alt="article"
-          width={0}
-          height={0}
-          sizes="100vw"
-          className="w-full h-full block object-cover"
-        />
+        {image ? (
+          <Image
+            src={image}
+            alt={data.title}
+            width={0}
+            height={0}
+            sizes="100vw"
+            className="w-full h-full block object-cover"
+          />
+        ) : (
+          <div className="w-full h-full bg-gray-200" />
+        )}
       </div>
       <div className="space-y-1">
         <p className="font-semibold line-clamp-2 lg:text-lg text-primary">
-          Tips Memilih Agen Paket Data All Operator untuk Usaha Rumahan
+          {data.title}
         </p>
         <p className="line-clamp-3 text-[#4D5461] text-sm">
-          Jangan biarkan korosi dini menghancurkan aset gudang Anda. Pelajari
-          perbedaan teknis ketebalan lapisan Aluminium-Zinc dan dampaknya
-          terhadap Life-Cycle Cost bangunan di lingkungan dengan tingkat
-          asiditas tinggi
+          {getExcerpt(data.content)}
         </p>
       </div>
-    </div>
+    </Link>
   );
 };

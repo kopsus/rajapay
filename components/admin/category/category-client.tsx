@@ -82,21 +82,20 @@ export default function CategoryClient({
           </thead>
           <tbody className="divide-y">
             {initialData.map((cat) => (
-              <tr key={cat.id} className="hover:bg-muted/30 transition-colors">
+              <tr key={cat.id} className="hover:bg-slate-50 transition-colors">
                 <td className="p-4 font-medium">{cat.name}</td>
                 <td className="p-4 text-right space-x-2">
                   <Button
-                    variant="outline"
                     size="icon"
-                    className="h-8 w-8 text-blue-500 hover:text-blue-600"
+                    className="h-8 w-8"
                     onClick={() => openEdit(cat)}
                   >
                     <Pencil className="h-4 w-4" />
                   </Button>
                   <Button
-                    variant="outline"
+                    variant="destructive"
                     size="icon"
-                    className="h-8 w-8 text-destructive hover:bg-destructive/10"
+                    className="h-8 w-8"
                     onClick={() => handleDelete(cat.id)}
                   >
                     <Trash2 className="h-4 w-4" />
