@@ -46,7 +46,7 @@ export const Testimoni = () => {
   ];
 
   return (
-    <div className="container-section">
+    <div id="testimoni" className="container-section">
       <div className="max-w-7xl mx-auto flex flex-col gap-14">
         <div className="relative flex flex-col items-center text-center gap-4 lg:gap-6 max-w-3xl mx-auto">
           <p className="text-primary text-3xl lg:text-5xl font-semibold leading-tight lg:leading-16">

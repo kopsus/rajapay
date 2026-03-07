@@ -35,7 +35,7 @@ export const Fitur = () => {
   ];
 
   return (
-    <div className="container-section bg-[#F9FAFB]">
+    <div id="produk" className="container-section bg-[#F9FAFB]">
       <div className="max-w-7xl mx-auto flex flex-col gap-10 lg:gap-14">
         <div className="flex flex-col items-center text-center gap-4 lg:gap-6 max-w-3xl mx-auto">
           <h2 className="text-primary text-3xl lg:text-5xl font-semibold leading-tight lg:leading-16">

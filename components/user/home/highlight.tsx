@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export const Highlight = () => {
   return (
-    <div className="container-section">
+    <div id="tentang" className="container-section">
       <div className="grid lg:grid-cols-3 gap-6 lg:w-11/12 max-w-7xl mx-auto">
         <div className="pt-6 px-6 rounded-[24px] bg-[#F3F5F8] flex flex-col gap-8">
           <div className="flex flex-col items-center text-center gap-4">
