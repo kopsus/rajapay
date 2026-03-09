@@ -10,15 +10,31 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { login } from "@/lib/action/auth";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 const LoginPage = () => {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const router = useRouter();
 
-  const handleSubmit = () => {
-    alert("submit");
-  };
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setLoading(true);
+    setError("");
+
+    const formData = new FormData(e.currentTarget);
+    const result = await login(formData);
+
+    if (result.success) {
+      router.push("/admin/blog");
+      router.refresh();
+    } else {
+      setError(result.error || "Login gagal");
+      setLoading(false);
+    }
+  }
 
   return (
     <div className="flex min-h-svh w-full items-center justify-center p-6 md:p-10">
