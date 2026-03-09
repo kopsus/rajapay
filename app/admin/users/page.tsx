@@ -4,7 +4,7 @@ import { getAdmins } from "@/lib/action/auth";
 const page = async () => {
   const data = await getAdmins();
   return (
-    <div className="p-8 space-y-6">
+    <div className="space-y-6">
       <AdminUserClient initialData={data || []} />
     </div>
   );

@@ -11,7 +11,7 @@ import {
   SidebarMenuItem,
   SidebarRail,
 } from "@/components/ui/sidebar";
-import { FileText, ListCheck, Package } from "lucide-react";
+import { FileText, ListCheck, Package, Users } from "lucide-react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
@@ -31,6 +31,11 @@ const navMain = [
     title: "Product",
     url: "/admin/product",
     icon: Package,
+  },
+  {
+    title: "Users",
+    url: "/admin/users",
+    icon: Users,
   },
 ];
 

@@ -45,29 +45,21 @@ export const TableAdmin = ({
                 {admin.email}
               </div>
             </TableCell>
-            {/* <TableCell className="text-slate-500 text-sm">
-              {new Date(admin.createdAt!).toLocaleDateString("id-ID", {
-                day: "numeric",
-                month: "long",
-                year: "numeric",
-              })}
-            </TableCell> */}
             <TableCell className="text-right">
               <div className="flex justify-end gap-2">
                 <Button
                   size="icon"
-                  variant="ghost"
                   onClick={() => {
                     setEditingId(admin.id);
                     setFormData(admin);
                     setIsOpen(true);
                   }}
                 >
-                  <Pencil size={15} className="text-blue-500" />
+                  <Pencil size={15} />
                 </Button>
                 <Button
                   size="icon"
-                  variant="ghost"
+                  variant="destructive"
                   onClick={async () => {
                     if (confirm("Hapus admin ini?")) {
                       await deleteAdmin(admin.id);
@@ -75,7 +67,7 @@ export const TableAdmin = ({
                     }
                   }}
                 >
-                  <Trash2 size={15} className="text-red-500" />
+                  <Trash2 size={15} />
                 </Button>
               </div>
             </TableCell>
