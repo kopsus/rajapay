@@ -27,6 +27,7 @@ export const Article1 = ({ item, key }: IArticle1) => {
           width={0}
           height={0}
           sizes="100vw"
+          unoptimized
           className="w-full h-auto rounded-2xl"
         />
       ) : (

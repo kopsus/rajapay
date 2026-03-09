@@ -76,6 +76,8 @@ export async function saveBlog(
     }
 
     revalidatePath("/admin/blog");
+    revalidatePath("/");
+    revalidatePath("/artikel");
     return { success: true };
   } catch (error) {
     console.error("Error saveBlog:", error);
@@ -88,6 +90,8 @@ export async function deleteBlog(id: string): Promise<{ success: boolean }> {
     await pool.query<ResultSetHeader>("DELETE FROM blog WHERE id = ?", [id]);
 
     revalidatePath("/admin/blog");
+    revalidatePath("/");
+    revalidatePath("/artikel");
     return { success: true };
   } catch {
     return { success: false };
