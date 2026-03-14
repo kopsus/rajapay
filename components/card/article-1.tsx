@@ -42,7 +42,7 @@ export const Article1 = ({ item, key }: IArticle1) => {
             {getExcerpt(item.content)}
           </p>
         </div>
-        <Link href={`/artikel/${item.id}`} className="w-full">
+        <Link href={`/artikel/${item.slug}`} className="w-full">
           <Button
             variant={"outline"}
             size={"lg"}

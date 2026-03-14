@@ -9,7 +9,7 @@ export const Article2 = ({ data }: { data: IBlog }) => {
 
   return (
     <Link
-      href={`/artikel/${data.id}`}
+      href={`/artikel/${data.slug}`}
       className="flex items-center gap-4 min-h-34.5"
     >
       <div className="min-w-37 w-37 h-full rounded-2xl overflow-hidden">

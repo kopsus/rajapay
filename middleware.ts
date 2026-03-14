@@ -3,7 +3,7 @@ import type { NextRequest } from "next/server";
 import { jwtVerify } from "jose";
 
 const SECRET_KEY = new TextEncoder().encode(
-  process.env.JWT_SECRET || "rayaku-secret-key",
+  process.env.JWT_SECRET || "rajapay-secret-key",
 );
 
 export async function middleware(request: NextRequest) {

@@ -1,4 +1,4 @@
-import { getBlogById, getBlogs } from "@/lib/action/blog";
+import { getBlogBySlug, getBlogs } from "@/lib/action/blog";
 import { format } from "date-fns";
 import { id as localeId } from "date-fns/locale";
 import { ArrowLeft, Calendar } from "lucide-react";
@@ -7,11 +7,11 @@ import { notFound } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Article2 } from "@/components/card/article-2";
 
-const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
-  const { id } = await params;
+const Page = async ({ params }: { params: { slug: string } }) => {
+  const { slug } = await params;
 
   const [article, allArticles] = await Promise.all([
-    getBlogById(id),
+    getBlogBySlug(slug),
     getBlogs({ limit: 6 }),
   ]);
 
@@ -20,7 +20,7 @@ const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
   }
 
   const relatedArticles = allArticles
-    .filter((item) => item.id !== id)
+    .filter((item) => item.slug !== slug)
     .slice(0, 5);
 
   return (
